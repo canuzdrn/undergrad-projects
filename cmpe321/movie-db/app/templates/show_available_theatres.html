@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Database Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>Available Theatres</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Theatre ID</th>
+        <th>District</th>
+        <th>Theatre Capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{ result.theatre_id }}</td>
+        <td>{{ result.district }}</td>
+        <td>{{ result.theatre_cap }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="buttons">
+    <button onclick="window.location.href = 'dir_operations';">Return to Main</button>
+    <button onclick="window.location.href = '/';">Logout</button>
+  </div>
+</body>
+</html>

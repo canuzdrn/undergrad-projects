@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Movie Session</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .login-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .login-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="add_movie_session" method="post">
+      <h2>Add Movie Session</h2>
+      <input type="text" name="session_id" placeholder="Session ID" required>
+      <input type="text" name="movie_id" placeholder="Movie ID" required>
+      <input type="text" name="movie_name" placeholder="Movie Name" required>
+      <input type="text" name="duration" placeholder="Duration" required>
+      <input type="text" name="genre_list" placeholder="Genre List" required>
+      <input type="text" name="dir_username" placeholder="Director Username">
+      <input type="text" name="theatre_id" placeholder="Theatre ID">
+      <input type="text" name="theatre_name" placeholder="Theatre Name">
+      <input type="text" name="theatre_cap" placeholder="Theatre Capacity">
+      <input type="text" name="district" placeholder="Theatre District">
+      <input type="text" name="time_slot" placeholder="Time Slot">
+      <input type="text" name="date" placeholder="Date">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+</body>
+</html>

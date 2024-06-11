@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Predecessor Movie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .login-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .login-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="add_pred" method="post">
+      <h2>Add Predecessor Movie</h2>
+      <input type="text" name="movie_id" placeholder="Movie ID" required>
+      <input type="text" name="pred_id" placeholder="Predecessor ID" required>
+      <input type="submit" value="Add">
+    </form>
+  </div>
+</body>
+</html>

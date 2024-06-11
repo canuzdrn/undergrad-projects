@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DB Manager Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .input-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function handleSelectionChange() {
+      var dropdown = document.getElementById("myDropdown");
+      var selectedValue = dropdown.value;
+
+      var form = document.getElementById("inputForm");
+      form.innerHTML = "";
+
+      if (selectedValue === "") {
+        // Do nothing if the empty option is selected
+        return;
+      }
+
+      if (selectedValue === "1") {
+        var redirectUrl = "taker_add_audience.html";
+        window.location.href = redirectUrl;
+      } 
+      else if (selectedValue === "2") {
+        var redirectUrl = "taker_add_director.html";
+        window.location.href = redirectUrl;
+      } 
+      else if (selectedValue === "3") {
+        var redirectUrl = "taker_delete_audience.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "4") {
+        var redirectUrl = "taker_update_platformID.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "5") {
+        var redirectUrl = "retrieve_directors";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "6") {
+        var redirectUrl = "taker_ratings_of_user.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "7") {
+        var redirectUrl = "taker_movies_of_director.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "8") {
+        var redirectUrl = "taker_movie_id_for_avg_rating.html";
+        window.location.href = redirectUrl;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form id="inputForm" class="input-form">
+      <h2>Select DB Manager Operation:</h2>
+      <select id="myDropdown" onchange="handleSelectionChange()">
+        <option value="">Please select</option>
+        <option value="1">Add new audience to the database</option>
+        <option value="2">Add new director to the database</option>
+        <option value="3">Delete audience by username</option>
+        <option value="4">Update platformID of a director</option>
+        <option value="5">View all directors</option>
+        <option value="6">View ratings of an audience</option>
+        <option value="7">View all movies of a specific director</option>
+        <option value="8">View average rating of a movie</option>
+      </select>
+    </form>
+  </div>
+  <div class="buttons">
+    <button onclick="window.location.href = '/';">Logout</button>
+  </div>
+</body>
+</html>

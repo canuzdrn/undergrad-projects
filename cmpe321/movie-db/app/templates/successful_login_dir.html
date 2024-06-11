@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Director Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .input-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function handleSelectionChange() {
+      var dropdown = document.getElementById("myDropdown");
+      var selectedValue = dropdown.value;
+
+      var form = document.getElementById("inputForm");
+      form.innerHTML = "";
+
+      if (selectedValue === "") {
+        // Do nothing if the empty option is selected
+        return;
+      }
+
+      if (selectedValue === "1") {
+        var redirectUrl = "taker_available_theatres.html";
+        window.location.href = redirectUrl;
+      } 
+      else if (selectedValue === "2") {
+        var redirectUrl = "taker_add_session.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "3") {
+        var redirectUrl = "taker_add_pred.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "4") {
+        var redirectUrl = "show_movies_of_himself";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "5") {
+        var redirectUrl = "taker_tickets_for_movie.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "6") {
+        var redirectUrl = "taker_update_movie.html";
+        window.location.href = redirectUrl;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form id="inputForm" class="input-form">
+      <h2>Select Director Operation:</h2>
+      <select id="myDropdown" onchange="handleSelectionChange()">
+        <option value="">Please select</option>
+        <option value="1">View available theatres</option>  <!-- REQ 10-->
+        <option value="2">Add movie</option>  <!-- REQ 11-->
+        <option value="3">Add predecessor</option>  <!-- REQ 12-->
+        <option value="4">View movies of the director</option>  <!-- REQ 13-->
+        <option value="5">View audiences that have bought ticket for a specific movie</option>  <!-- REQ 14-->
+        <option value="6">Update the name of a movie</option>  <!-- REQ 15-->
+      </select>
+    </form>
+  </div>
+  <div class="buttons">
+    <button onclick="window.location.href = '/';">Logout</button>
+  </div>
+</body>
+</html>

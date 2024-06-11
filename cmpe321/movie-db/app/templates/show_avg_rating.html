@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Database Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>Retrieved Average Rating</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Movie ID</th>
+        <th>Movie Name</th>
+        <th>Overall Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{ result.movie_id }}</td>
+        <td>{{ result.movie_name }}</td>
+        <td>{{ result.avg_rating }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="buttons">
+    <button onclick="window.location.href = 'dbm_operations';">Return to Main</button>
+    <button onclick="window.location.href = '/';">Logout</button>
+  </div>
+</body>
+</html>

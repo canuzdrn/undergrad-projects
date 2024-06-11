@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies of A Director</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .login-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .login-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .login-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="show_movies_of_director" method="post">
+      <h2>Get Movies of a Director</h2>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

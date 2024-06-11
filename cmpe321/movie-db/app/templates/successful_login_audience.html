@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audience Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-form {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .input-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function handleSelectionChange() {
+      var dropdown = document.getElementById("myDropdown");
+      var selectedValue = dropdown.value;
+
+      var form = document.getElementById("inputForm");
+      form.innerHTML = "";
+
+      if (selectedValue === "") {
+        // Do nothing if the empty option is selected
+        return;
+      }
+
+      if (selectedValue === "1") {
+        var redirectUrl = "show_all_movies";
+        window.location.href = redirectUrl;
+      } 
+      else if (selectedValue === "2") {
+        var redirectUrl = "taker_buy_ticket.html";
+        window.location.href = redirectUrl;
+      }
+      else if (selectedValue === "3") {
+        var redirectUrl = "show_tickets";
+        window.location.href = redirectUrl;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form id="inputForm" class="input-form">
+      <h2>Select Audience Opearation:</h2>
+      <select id="myDropdown" onchange="handleSelectionChange()">
+        <option value="">Please select</option>
+        <option value="1">List all movies</option>  <!-- REQ 16 -->
+        <option value="2">Buy a movie ticket</option>  <!-- REQ 17 -->
+        <option value="3">List tickets</option>  <!-- REQ 17 -->
+      </select>
+    </form>
+  </div>
+  <div class="buttons">
+    <button onclick="window.location.href = '/';">Logout</button>
+  </div>
+</body>
+</html>
